@@ -15,14 +15,14 @@ import kotlinx.coroutines.delay
 fun SplashScreen(navController: NavHostController) {
     Box(modifier = Modifier.fillMaxSize()) {
         Text(
-            text = "Splash Screen",
+            text = "Smart Pet Feeder",
             style = MaterialTheme.typography.headlineLarge,
             modifier = Modifier.align(Alignment.Center)
         )
     }
 
     LaunchedEffect(Unit) {
-        delay(2000) // Tampilkan splash screen selama 2 detik
+        delay(500) // Tampilkan splash screen selama 2 detik
         navController.navigate("login") {
             popUpTo("splash") { inclusive = true }
         }

@@ -62,4 +62,8 @@ dependencies {
     implementation("androidx.compose.material3:material3:1.2.0")   // Material3 yang stabil
     implementation(platform("com.google.firebase:firebase-bom:31.2.3"))
     implementation("com.google.firebase:firebase-auth-ktx")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
+    implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
+    implementation("androidx.compose.material:material-icons-core:<version>")
+    implementation("androidx.compose.material:material-icons-extended:<version>")
 }
