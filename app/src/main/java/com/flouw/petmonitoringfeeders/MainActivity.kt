@@ -10,7 +10,9 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.flouw.petmonitoringfeeders.screens.LoginScreen
 import com.flouw.petmonitoringfeeders.screens.MainScreen
+import com.flouw.petmonitoringfeeders.screens.SignupScreen
 import com.flouw.petmonitoringfeeders.screens.SplashScreen
 import kotlinx.coroutines.delay
 
@@ -30,6 +32,12 @@ fun SplashScreenApp() {
     NavHost(navController, startDestination = "splash") {
         composable("splash") {
             SplashScreen(navController)
+        }
+        composable("login") {
+            LoginScreen(navController)
+        }
+        composable("signup") {
+            SignupScreen(navController)
         }
         composable("main") {
             MainScreen()

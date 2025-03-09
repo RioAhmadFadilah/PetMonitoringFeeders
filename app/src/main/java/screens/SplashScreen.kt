@@ -23,7 +23,7 @@ fun SplashScreen(navController: NavHostController) {
 
     LaunchedEffect(Unit) {
         delay(2000) // Tampilkan splash screen selama 2 detik
-        navController.navigate("main") {
+        navController.navigate("login") {
             popUpTo("splash") { inclusive = true }
         }
     }

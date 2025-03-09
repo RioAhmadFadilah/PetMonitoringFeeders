@@ -60,4 +60,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.navigation:navigation-compose:2.7.6") // Navigasi Compose
     implementation("androidx.compose.material3:material3:1.2.0")   // Material3 yang stabil
+    implementation(platform("com.google.firebase:firebase-bom:31.2.3"))
+    implementation("com.google.firebase:firebase-auth-ktx")
 }
