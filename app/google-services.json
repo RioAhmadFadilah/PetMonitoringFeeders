@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "193960823060",
+    "project_id": "petmonitoringfeeders",
+    "storage_bucket": "petmonitoringfeeders.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:193960823060:android:f6db7841795b238a141a01",
+        "android_client_info": {
+          "package_name": "com.flouw.petmonitoringfeeders"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCkXq8qUT2vRX1BmQBfwRgv-sSaWcKpt2I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
