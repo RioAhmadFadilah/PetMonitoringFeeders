@@ -42,7 +42,7 @@ fun MainScreen(modifier: Modifier = Modifier) {
         NavItem("Jadwal", Icons.Default.Timer,0),
         NavItem("Dashboard", Icons.Default.Home,0),
         NavItem("Notification", Icons.Default.Notifications,0),
-        NavItem("Setingg", Icons.Default.Settings, 0)
+        NavItem("Settings", Icons.Default.Settings, 0)
     )
 
     var selectedIndex by remember {

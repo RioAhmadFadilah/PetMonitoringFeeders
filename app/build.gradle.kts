@@ -42,6 +42,7 @@ android {
 
 dependencies {
 
+    implementation(platform("com.google.firebase:firebase-bom:33.10.0")) // ✅ Letakkan di awal
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -60,10 +61,10 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     implementation("androidx.navigation:navigation-compose:2.7.6") // Navigasi Compose
     implementation("androidx.compose.material3:material3:1.2.0")   // Material3 yang stabil
-    implementation(platform("com.google.firebase:firebase-bom:31.2.3"))
     implementation("com.google.firebase:firebase-auth-ktx")
     implementation("androidx.navigation:navigation-fragment-ktx:2.4.1")
     implementation("androidx.navigation:navigation-ui-ktx:2.4.1")
     implementation("androidx.compose.material:material-icons-core:<version>")
     implementation("androidx.compose.material:material-icons-extended:<version>")
+    implementation("com.google.firebase:firebase-firestore")
 }
