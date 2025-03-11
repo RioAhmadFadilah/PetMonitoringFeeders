@@ -126,5 +126,11 @@ fun LoginScreen(navController: NavHostController) {
         TextButton(onClick = { navController.navigate("signup") }) {
             Text("Don't have an account? Sign Up")
         }
+        TextButton(
+            onClick = { navController.navigate("forgot_password") }
+        ) {
+            Text("Lupa Kata Sandi?")
+        }
+
     }
 }

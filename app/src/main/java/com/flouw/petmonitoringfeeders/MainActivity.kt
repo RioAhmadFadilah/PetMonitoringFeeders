@@ -10,6 +10,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.flouw.petmonitoringfeeders.screens.ForgotPasswordScreen
 import com.flouw.petmonitoringfeeders.screens.LoginScreen
 import com.flouw.petmonitoringfeeders.screens.MainScreen
 import com.flouw.petmonitoringfeeders.screens.SignupScreen
@@ -42,5 +43,9 @@ fun SplashScreenApp() {
         composable("main") {
             MainScreen()
         }
+        composable("forgot_password") {
+            ForgotPasswordScreen(navController)
+        }
+
     }
 }
