@@ -8,6 +8,8 @@ import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Person
 import androidx.compose.material.icons.filled.Settings
+import androidx.compose.material.icons.filled.Timer
+import androidx.compose.material.icons.filled.Videocam
 import androidx.compose.material3.Badge
 import androidx.compose.material3.BadgedBox
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -23,7 +25,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import com.flouw.petmonitoringfeeders.NavItem
-import com.flouw.petmonitoringfeeders.pages.HomePage
+import com.flouw.petmonitoringfeeders.pages.CameraPage
+import com.flouw.petmonitoringfeeders.pages.DashboardPage
+import com.flouw.petmonitoringfeeders.pages.SchedulePage
 import com.flouw.petmonitoringfeeders.pages.NotificationPage
 import com.flouw.petmonitoringfeeders.pages.SettingsPage
 
@@ -34,9 +38,11 @@ fun MainScreen(modifier: Modifier = Modifier) {
 
 
     val navItemList = listOf(
-        NavItem("Home", Icons.Default.Home,0),
-        NavItem("Notification", Icons.Default.Notifications,5),
-        NavItem("Settings", Icons.Default.Settings,0),
+        NavItem("Cam", Icons.Default.Videocam,0),
+        NavItem("Jadwal", Icons.Default.Timer,0),
+        NavItem("Dashboard", Icons.Default.Home,0),
+        NavItem("Notification", Icons.Default.Notifications,0),
+        NavItem("Setingg", Icons.Default.Settings, 0)
     )
 
     var selectedIndex by remember {
@@ -80,8 +86,12 @@ fun MainScreen(modifier: Modifier = Modifier) {
 @Composable
 fun ContentScreen(modifier: Modifier = Modifier, selectedIndex : Int) {
     when(selectedIndex){
-        0-> HomePage()
-        1-> NotificationPage()
-        2-> SettingsPage()
+        0-> CameraPage()
+        1-> SchedulePage()
+        2-> DashboardPage()
+        3-> NotificationPage()
+        4-> SettingsPage()
+
+
     }
 }
