@@ -1,21 +1,18 @@
 package com.flouw.petmonitoringfeeders.screens
 
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.text.input.PasswordVisualTransformation
-import androidx.navigation.NavHostController
-import com.google.firebase.auth.FirebaseAuth
-
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import com.google.firebase.auth.FirebaseAuth
 import com.flouw.petmonitoringfeeders.R
 
 @Composable
@@ -29,7 +26,7 @@ fun LoginScreen(navController: NavHostController) {
     Column(
         modifier = Modifier
             .fillMaxSize()
-            .padding(horizontal = 16.dp), // Padding lebih proporsional
+            .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
@@ -39,7 +36,7 @@ fun LoginScreen(navController: NavHostController) {
             modifier = Modifier.size(120.dp)
         )
 
-        Spacer(modifier = Modifier.height(24.dp)) // Tambahkan lebih banyak spasi
+        Spacer(modifier = Modifier.height(24.dp))
 
         OutlinedTextField(
             value = email,
@@ -53,11 +50,11 @@ fun LoginScreen(navController: NavHostController) {
             ),
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(horizontal = 16.dp) // Tambahkan padding
+                .padding(horizontal = 16.dp)
                 .height(56.dp)
         )
 
-        Spacer(modifier = Modifier.height(12.dp)) // Lebih banyak jarak antar field
+        Spacer(modifier = Modifier.height(12.dp))
 
         OutlinedTextField(
             value = password,
@@ -109,9 +106,9 @@ fun LoginScreen(navController: NavHostController) {
                 ),
                 modifier = Modifier
                     .fillMaxWidth()
-                    .padding(horizontal = 16.dp) // Tambahkan padding agar lebih proporsional
+                    .padding(horizontal = 16.dp)
                     .height(56.dp),
-                enabled = !isLoading // Disable tombol saat loading
+                enabled = !isLoading
             ) {
                 Text("Login")
             }
@@ -126,11 +123,8 @@ fun LoginScreen(navController: NavHostController) {
         TextButton(onClick = { navController.navigate("signup") }) {
             Text("Don't have an account? Sign Up")
         }
-        TextButton(
-            onClick = { navController.navigate("forgot_password") }
-        ) {
+        TextButton(onClick = { navController.navigate("forgot_password") }) {
             Text("Lupa Kata Sandi?")
         }
-
     }
 }

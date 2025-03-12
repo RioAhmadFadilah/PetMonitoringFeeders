@@ -24,6 +24,7 @@ import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.navigation.NavController
 import com.flouw.petmonitoringfeeders.NavItem
 import com.flouw.petmonitoringfeeders.pages.CameraPage
 import com.flouw.petmonitoringfeeders.pages.DashboardPage
@@ -32,22 +33,17 @@ import com.flouw.petmonitoringfeeders.pages.NotificationPage
 import com.flouw.petmonitoringfeeders.pages.SettingsPage
 
 
-@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainScreen(modifier: Modifier = Modifier) {
-
-
+fun MainScreen(navController: NavController, modifier: Modifier = Modifier) {
     val navItemList = listOf(
-        NavItem("Cam", Icons.Default.Videocam,0),
-        NavItem("Jadwal", Icons.Default.Timer,0),
-        NavItem("Dashboard", Icons.Default.Home,0),
-        NavItem("Notification", Icons.Default.Notifications,0),
+        NavItem("Cam", Icons.Default.Videocam, 0),
+        NavItem("Jadwal", Icons.Default.Timer, 0),
+        NavItem("Dashboard", Icons.Default.Home, 0),
+        NavItem("Notification", Icons.Default.Notifications, 0),
         NavItem("Settings", Icons.Default.Settings, 0)
     )
 
-    var selectedIndex by remember {
-        mutableIntStateOf(0)
-    }
+    var selectedIndex by remember { mutableIntStateOf(0) }
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
@@ -55,43 +51,40 @@ fun MainScreen(modifier: Modifier = Modifier) {
             NavigationBar {
                 navItemList.forEachIndexed { index, navItem ->
                     NavigationBarItem(
-                        selected =  selectedIndex == index ,
-                        onClick = {
-                            selectedIndex = index
-                        },
+                        selected = selectedIndex == index,
+                        onClick = { selectedIndex = index },
                         icon = {
                             BadgedBox(badge = {
-                                if(navItem.badgeCount>0)
-                                    Badge(){
+                                if (navItem.badgeCount > 0) {
+                                    Badge {
                                         Text(text = navItem.badgeCount.toString())
                                     }
+                                }
                             }) {
                                 Icon(imageVector = navItem.icon, contentDescription = "Icon")
                             }
-
                         },
-                        label = {
-                            Text(text = navItem.label)
-                        }
+                        label = { Text(text = navItem.label) }
                     )
                 }
             }
         }
     ) { innerPadding ->
-        ContentScreen(modifier = Modifier.padding(innerPadding),selectedIndex)
+        ContentScreen(
+            modifier = Modifier.padding(innerPadding),
+            selectedIndex = selectedIndex,
+            navController = navController
+        )
     }
 }
 
-
 @Composable
-fun ContentScreen(modifier: Modifier = Modifier, selectedIndex : Int) {
-    when(selectedIndex){
-        0-> CameraPage()
-        1-> SchedulePage()
-        2-> DashboardPage()
-        3-> NotificationPage()
-        4-> SettingsPage()
-
-
+fun ContentScreen(modifier: Modifier = Modifier, selectedIndex: Int, navController: NavController) {
+    when (selectedIndex) {
+        0 -> CameraPage()
+        1 -> SchedulePage()
+        2 -> DashboardPage()
+        3 -> NotificationPage()
+        4 -> SettingsPage(navController = navController) // Perbaikan: Tambahkan navController
     }
 }
